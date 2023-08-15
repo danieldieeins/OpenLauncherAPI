@@ -7,7 +7,7 @@ This is a pack of FlowArg's three launcher "tools"
 
 ---
 
-- This project is compatible with Java 8 - Java 17 (and probably up?) because it is not based on Gradle but on Maven.
+- This project is compatible with Java 8 - Java 17 (and probably up?) because it's based on Maven instead of Gradle.
 - This project will likely be updated with new features and custom and; or modified code.
 - This project needs Gson: https://github.com/Google/Gson
 
