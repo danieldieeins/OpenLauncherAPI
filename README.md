@@ -1,4 +1,4 @@
-This is a pack of FlowArg's three Launcher Tools
+This is a pack of FlowArg's three launcher "tools"
 -
 
 - FlowMultitools: https://github.com/FlowArg/FlowMultitools (v1.4.0)
