@@ -5,9 +5,11 @@ This is a pack of FlowArg's three launcher "tools"
 - FlowUpdater: https://github.com/FlowArg/FlowUpdater (v1.8.0)
 - OpenLauncherLib: https://github.com/FlowArg/OpenLauncherLib (v3.2.6)
 
-This project is compatible with Java 17 because it is not based on Gradle but on Maven.
-This project will likely be updated with new features and custom and; or modified code.
-This project needs Gson: https://github.com/Google/Gson
+---
+
+- This project is compatible with Java 17 because it is not based on Gradle but on Maven.
+- This project will likely be updated with new features and custom and; or modified code.
+- This project needs Gson: https://github.com/Google/Gson
 
 How to implement
 -
