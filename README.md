@@ -29,7 +29,7 @@ Maven dependency:
     <dependency>
         <groupId>com.github.danieldieeins</groupId>
         <artifactId>OpenLauncherAPI</artifactId>
-        <version>e8f96d9</version>
+        <version>a992b92</version>
         <scope>compile</scope>
     </dependency>
     <!--Other dependencies...-->
@@ -46,7 +46,7 @@ repositories {
 Gradle dependency:
 ```
 dependencies {
-    implementation 'com.github.danieldieeins:OpenLauncherAPI:e8f96d9'
+    implementation 'com.github.danieldieeins:OpenLauncherAPI:a992b92'
     //Other dependencies...
 }
 ```
