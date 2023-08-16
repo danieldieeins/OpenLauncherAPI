@@ -1,4 +1,4 @@
-An API to create Minecraft launchers ```4.1.0/VERSION```
+An API to create Minecraft launchers ```4.1.0```
 -
 
 Including following projects
