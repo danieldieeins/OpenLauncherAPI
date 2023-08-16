@@ -1,15 +1,21 @@
-This is a pack of FlowArg's three launcher "tools"
+An API to create Minecraft launchers ```4.1.0/VERSION```
 -
 
+Including following projects
 - FlowMultitools: https://github.com/FlowArg/FlowMultitools (v1.4.0)
 - FlowUpdater: https://github.com/FlowArg/FlowUpdater (v1.8.0)
 - OpenLauncherLib: https://github.com/FlowArg/OpenLauncherLib (v3.2.6)
+- OpenAuth: https://github.com/FlowArg/OpenAuth (1.1.5)
 
 ---
 
-- This project is compatible with Java 8 - 17 (and probably up) because it's based on Maven instead of Gradle.
+- This projects needs Java 17 or up.
 - This project will likely be updated with new features and custom and; or modified code.
-- This project needs Gson: https://github.com/Google/Gson
+- Take a look to check the dependencies: https://github.com/danieldieeins/OpenLauncherAPI/blob/master/pom.xml
+
+---
+
+- ``NEW: SimpleMicrosoftAuth | NEW: AESUtil``
 
 How to implement (Maven/Gradle)
 -
@@ -29,7 +35,7 @@ Maven dependency:
     <dependency>
         <groupId>com.github.danieldieeins</groupId>
         <artifactId>OpenLauncherAPI</artifactId>
-        <version>a992b92</version>
+        <version>VERSION</version>
         <scope>compile</scope>
     </dependency>
     <!--Other dependencies...-->
@@ -46,7 +52,7 @@ repositories {
 Gradle dependency:
 ```
 dependencies {
-    implementation 'com.github.danieldieeins:OpenLauncherAPI:a992b92'
+    implementation 'com.github.danieldieeins:OpenLauncherAPI:VERSION'
     //Other dependencies...
 }
 ```
