@@ -22,6 +22,11 @@ package fr.theshark34.openlauncherlib.language.api;
 public class LanguageTypes
 {
     /**
+     * Retrieve the name of language german.
+     */
+    public static final LanguageInfo DE = () -> "de";
+
+    /**
      * Retrieve the name of language french.
      */
     public static final LanguageInfo FR = () -> "fr";

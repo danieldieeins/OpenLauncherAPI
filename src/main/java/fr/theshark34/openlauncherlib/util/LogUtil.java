@@ -55,15 +55,15 @@ public final class LogUtil
 
     static
     {
+        LANGUAGE_MANAGER.registerLanguage(IDENTIFIER, LanguageTypes.DE, "/assets/languages/");
         LANGUAGE_MANAGER.registerLanguage(IDENTIFIER, LanguageTypes.EN, "/assets/languages/");
         LANGUAGE_MANAGER.registerLanguage(IDENTIFIER, LanguageTypes.FR, "/assets/languages/");
 
-        if (Locale.getDefault().getLanguage().toLowerCase().startsWith("fr"))
-        {
+        if(Locale.getDefault().getLanguage().toLowerCase().startsWith("de")) {
+            LANGUAGE_MANAGER.setDefaultLanguage(LANGUAGE_MANAGER.getLanguage(LanguageTypes.DE));
+        } else if(Locale.getDefault().getLanguage().toLowerCase().startsWith("fr")) {
             LANGUAGE_MANAGER.setDefaultLanguage(LANGUAGE_MANAGER.getLanguage(LanguageTypes.FR));
-        }
-        else
-        {
+        } else {
             LANGUAGE_MANAGER.setDefaultLanguage(LANGUAGE_MANAGER.getLanguage(LanguageTypes.EN));
         }
     }
