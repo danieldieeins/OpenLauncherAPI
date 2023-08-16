@@ -1,14 +1,17 @@
-This is a pack of FlowArg's three Launcher Tools
+This is a pack of FlowArg's three launcher "tools"
 -
 
-- FlowMultitools: https://github.com/FlowArg/FlowMultitools
-- FlowUpdater: https://github.com/FlowArg/FlowUpdater
-- OpenLauncherLib: https://github.com/FlowArg/OpenLauncherLib
+- FlowMultitools: https://github.com/FlowArg/FlowMultitools (v1.4.0)
+- FlowUpdater: https://github.com/FlowArg/FlowUpdater (v1.8.0)
+- OpenLauncherLib: https://github.com/FlowArg/OpenLauncherLib (v3.2.6)
 
-This project is compatible with Java 17 because it is not based on Gradle but on Maven.
-This project will likely be updated with new features and custom and; or modified code.
+---
 
-How to implement
+- This project is compatible with Java 8 - 17 (and probably up) because it's based on Maven instead of Gradle.
+- This project will likely be updated with new features and custom and; or modified code.
+- This project needs Gson: https://github.com/Google/Gson
+
+How to implement (Maven/Gradle)
 -
 Maven repository:
 ```
@@ -26,7 +29,7 @@ Maven dependency:
     <dependency>
         <groupId>com.github.danieldieeins</groupId>
         <artifactId>OpenLauncherAPI</artifactId>
-        <version>e8f96d9</version>
+        <version>a992b92</version>
         <scope>compile</scope>
     </dependency>
     <!--Other dependencies...-->
@@ -43,7 +46,7 @@ repositories {
 Gradle dependency:
 ```
 dependencies {
-    implementation 'com.github.danieldieeins:OpenLauncherAPI:e8f96d9'
+    implementation 'com.github.danieldieeins:OpenLauncherAPI:a992b92'
     //Other dependencies...
 }
 ```
