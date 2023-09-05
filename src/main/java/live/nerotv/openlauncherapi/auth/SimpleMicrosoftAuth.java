@@ -3,9 +3,11 @@ package live.nerotv.openlauncherapi.auth;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
 import fr.theshark34.openlauncherlib.minecraft.AuthInfos;
-import javafx.scene.control.Alert;
 import live.nerotv.openlauncherapi.util.AESUtil;
 import live.nerotv.openlauncherapi.util.Config;
+
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 
 public class SimpleMicrosoftAuth {
@@ -68,10 +70,12 @@ public class SimpleMicrosoftAuth {
         MicrosoftAuthenticator auth = new MicrosoftAuthenticator();
         auth.loginWithAsyncWebview().whenCompleteAsync((response, error) -> {
             if (error != null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("error");
-                alert.setContentText(error.getMessage());
-                alert.show();
+                JFrame errorFrame = new JFrame();
+                errorFrame.setTitle("Error");
+                Label text = new Label(error.getMessage());
+                errorFrame.add(text);
+                errorFrame.pack();
+                errorFrame.setVisible(true);
                 return;
             }
             authInfos = new AuthInfos(response.getProfile().getName(), response.getAccessToken(), response.getProfile().getId());
