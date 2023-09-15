@@ -1,7 +1,7 @@
 An API to create Minecraft launchers ```4.1.0```
 -
 
-Including following projects
+Based on following projects
 - FlowMultitools: https://github.com/FlowArg/FlowMultitools (v1.4.0)
 - FlowUpdater: https://github.com/FlowArg/FlowUpdater (v1.8.0)
 - OpenLauncherLib: https://github.com/FlowArg/OpenLauncherLib (v3.2.6)
