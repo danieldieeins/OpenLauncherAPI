@@ -1,15 +1,15 @@
-An API to create Minecraft launchers ```4.1.0```
+An API to create Minecraft launchers ```4.2.0```
 -
 
 Based on following projects
 - FlowMultitools: https://github.com/FlowArg/FlowMultitools (v1.4.0)
-- FlowUpdater: https://github.com/FlowArg/FlowUpdater (v1.8.0)
+- FlowUpdater: https://github.com/FlowArg/FlowUpdater (v1.8.1)
 - OpenLauncherLib: https://github.com/FlowArg/OpenLauncherLib (v3.2.6)
 - OpenAuth: https://github.com/FlowArg/OpenAuth (1.1.5)
 
 ---
 
-- This projects needs Java 17 or up.
+- This projects needs Java 8 or up.
 - This project will likely be updated with new features and custom and; or modified code.
 - Take a look to check the dependencies: https://github.com/danieldieeins/OpenLauncherAPI/blob/master/pom.xml
 
@@ -35,7 +35,7 @@ Maven dependency:
     <dependency>
         <groupId>com.github.danieldieeins</groupId>
         <artifactId>OpenLauncherAPI</artifactId>
-        <version>4.1.0</version>
+        <version>4.2.0</version>
         <scope>compile</scope>
     </dependency>
     <!--Other dependencies...-->
@@ -52,7 +52,7 @@ repositories {
 Gradle dependency:
 ```
 dependencies {
-    implementation 'com.github.danieldieeins:OpenLauncherAPI:4.1.0'
+    implementation 'com.github.danieldieeins:OpenLauncherAPI:4.2.0'
     //Other dependencies...
 }
 ```
