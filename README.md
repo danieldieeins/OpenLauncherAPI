@@ -1,4 +1,4 @@
-An API to create Minecraft launchers ```4.3.0```
+An API to create Minecraft launchers ```4.4.0```
 ---
 
 - This projects needs Java 8 or up.
@@ -27,7 +27,7 @@ Maven dependency:
     <dependency>
         <groupId>com.github.danieldieeins</groupId>
         <artifactId>OpenLauncherAPI</artifactId>
-        <version>4.3.0</version>
+        <version>4.4.0</version>
         <scope>compile</scope>
     </dependency>
     <!--Other dependencies...-->
@@ -44,7 +44,7 @@ repositories {
 Gradle dependency:
 ```
 dependencies {
-    implementation 'com.github.danieldieeins:OpenLauncherAPI:4.3.0'
+    implementation 'com.github.danieldieeins:OpenLauncherAPI:4.4.0'
     //Other dependencies...
 }
 ```
