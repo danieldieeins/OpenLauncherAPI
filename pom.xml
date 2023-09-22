@@ -6,7 +6,7 @@
 
     <groupId>live.nerotv</groupId>
     <artifactId>OpenLauncherAPI</artifactId>
-    <version>4.4.0</version>
+    <version>4.4.1</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>com.github.danieldieeins</groupId>
             <artifactId>ShadeMeBaby</artifactId>
-            <version>1.0.2</version>
+            <version>1.1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
