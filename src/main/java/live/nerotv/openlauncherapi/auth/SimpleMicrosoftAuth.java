@@ -13,6 +13,27 @@ import java.util.UUID;
 
 public class SimpleMicrosoftAuth {
 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(()->{
+            SimpleMicrosoftAuth auth = new SimpleMicrosoftAuth();
+            auth.setAuthResolver(new AuthResolver() {
+                @Override
+                public void preAuth() {
+                    AuthResolver.super.preAuth();
+                    System.out.println("pre-Auth");
+                }
+
+                @Override
+                public void postAuth(String name, String suid) {
+                    AuthResolver.super.postAuth(name, suid);
+                    System.out.println("post-Auth");
+                    System.out.println(name+" ("+suid+")");
+                }
+            });
+            auth.startAsyncWebview();
+        });
+    }
+
     private AuthInfos authInfos;
     private File saveFile;
     private byte[] key;
@@ -28,8 +49,8 @@ public class SimpleMicrosoftAuth {
             }
 
             @Override
-            public void postAuth(String name, UUID uuid) {
-                AuthResolver.super.postAuth(name, uuid);
+            public void postAuth(String name, String suid) {
+                AuthResolver.super.postAuth(name, suid);
             }
         };
     }
@@ -64,6 +85,7 @@ public class SimpleMicrosoftAuth {
                 Config saver = new Config(saveFile);
                 if (saver.get("opapi.ms.a") != null || saver.get("opapi.ms.r") != null || saver.get("opapi.ms.u") != null || saver.get("opapi.ms.n") != null) {
                     MicrosoftAuthenticator auth = new MicrosoftAuthenticator();
+                    resolver.preAuth();
                     String r = (String)saver.get("opapi.ms.r");
                     try {
                         byte[] b = r.getBytes();
@@ -74,11 +96,11 @@ public class SimpleMicrosoftAuth {
                         byte[] refresh = AESUtil.encrypt(key, response.getRefreshToken().getBytes());
                         byte[] uniqueID = AESUtil.encrypt(key, response.getProfile().getId().getBytes());
                         byte[] name = AESUtil.encrypt(key, response.getProfile().getName().getBytes());
+                        resolver.postAuth(response.getProfile().getName(),response.getProfile().getId());
                         saver.set("opapi.ms.a", new String(access));
                         saver.set("opapi.ms.r", new String(refresh));
                         saver.set("opapi.ms.u", new String(uniqueID));
                         saver.set("opapi.ms.n", new String(name));
-                        resolver.postAuth(response.getProfile().getName(),UUID.fromString(response.getProfile().getId()));
                         return true;
                     } catch (Exception ignore) {
                     }
@@ -109,12 +131,12 @@ public class SimpleMicrosoftAuth {
                         byte[] refresh = AESUtil.encrypt(key, response.getRefreshToken().getBytes());
                         byte[] uniqueID = AESUtil.encrypt(key, response.getProfile().getId().getBytes());
                         byte[] name = AESUtil.encrypt(key, response.getProfile().getName().getBytes());
+                        resolver.postAuth(response.getProfile().getName(),response.getProfile().getId());
                         Config saver = new Config(saveFile);
                         saver.set("opapi.ms.a", new String(access));
                         saver.set("opapi.ms.r", new String(refresh));
                         saver.set("opapi.ms.u", new String(uniqueID));
                         saver.set("opapi.ms.n", new String(name));
-                        resolver.postAuth(response.getProfile().getName(),UUID.fromString(response.getProfile().getId()));
                     } catch (Exception e) {
                         System.out.println("[ERROR] couldn't save login credentials: " + e.getMessage());
                         resolver.postAuth(null,null);

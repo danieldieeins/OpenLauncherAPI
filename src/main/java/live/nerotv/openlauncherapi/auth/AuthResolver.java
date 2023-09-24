@@ -8,5 +8,5 @@ public interface AuthResolver {
 
     }
 
-    default void postAuth(String name, UUID uuid) {}
+    default void postAuth(String name, String suid) {}
 }
