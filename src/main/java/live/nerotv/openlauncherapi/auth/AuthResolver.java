@@ -4,5 +4,9 @@ import java.util.UUID;
 
 public interface AuthResolver {
 
-    default void postAuth() {}
+    default void preAuth() {
+
+    }
+
+    default void postAuth(String name, UUID uuid) {}
 }

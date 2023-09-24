@@ -9,6 +9,7 @@ import live.nerotv.shademebaby.file.Config;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.util.UUID;
 
 public class SimpleMicrosoftAuth {
 
@@ -22,8 +23,13 @@ public class SimpleMicrosoftAuth {
         key = null;
         resolver = new AuthResolver() {
             @Override
-            public void postAuth() {
-                AuthResolver.super.postAuth();
+            public void preAuth() {
+                AuthResolver.super.preAuth();
+            }
+
+            @Override
+            public void postAuth(String name, UUID uuid) {
+                AuthResolver.super.postAuth(name, uuid);
             }
         };
     }
@@ -72,7 +78,7 @@ public class SimpleMicrosoftAuth {
                         saver.set("opapi.ms.r", new String(refresh));
                         saver.set("opapi.ms.u", new String(uniqueID));
                         saver.set("opapi.ms.n", new String(name));
-                        resolver.postAuth();
+                        resolver.postAuth(response.getProfile().getName(),UUID.fromString(response.getProfile().getId()));
                         return true;
                     } catch (Exception ignore) {
                     }
@@ -84,6 +90,7 @@ public class SimpleMicrosoftAuth {
 
     public void startAsyncWebview() {
         MicrosoftAuthenticator auth = new MicrosoftAuthenticator();
+        resolver.preAuth();
         auth.loginWithAsyncWebview().whenCompleteAsync((response, error) -> {
             if (error != null) {
                 JFrame errorFrame = new JFrame();
@@ -107,9 +114,10 @@ public class SimpleMicrosoftAuth {
                         saver.set("opapi.ms.r", new String(refresh));
                         saver.set("opapi.ms.u", new String(uniqueID));
                         saver.set("opapi.ms.n", new String(name));
-                        resolver.postAuth();
+                        resolver.postAuth(response.getProfile().getName(),UUID.fromString(response.getProfile().getId()));
                     } catch (Exception e) {
                         System.out.println("[ERROR] couldn't save login credentials: " + e.getMessage());
+                        resolver.postAuth(null,null);
                     }
                 }
             }
