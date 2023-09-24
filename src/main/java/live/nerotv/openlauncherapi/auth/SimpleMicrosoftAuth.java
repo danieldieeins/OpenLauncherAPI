@@ -9,30 +9,8 @@ import live.nerotv.shademebaby.file.Config;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.util.UUID;
 
 public class SimpleMicrosoftAuth {
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(()->{
-            SimpleMicrosoftAuth auth = new SimpleMicrosoftAuth();
-            auth.setAuthResolver(new AuthResolver() {
-                @Override
-                public void preAuth() {
-                    AuthResolver.super.preAuth();
-                    System.out.println("pre-Auth");
-                }
-
-                @Override
-                public void postAuth(String name, String suid) {
-                    AuthResolver.super.postAuth(name, suid);
-                    System.out.println("post-Auth");
-                    System.out.println(name+" ("+suid+")");
-                }
-            });
-            auth.startAsyncWebview();
-        });
-    }
 
     private AuthInfos authInfos;
     private File saveFile;
