@@ -29,7 +29,7 @@
         <dependency>
             <groupId>com.github.danieldieeins</groupId>
             <artifactId>ShadeMeBaby</artifactId>
-            <version>1.1.0</version>
+            <version>f31577e</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
